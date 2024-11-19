@@ -1,0 +1,191 @@
+/* Reset styles and universal font settings */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    /* Soft purple background */
+    color: #fff;
+    font-size: 16px;
+}
+
+/* App container styling */
+.app {
+    background: #fff;
+    width: 90%;
+    max-width: 650px;
+    margin: 100px auto;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.1);
+    /* Larger shadow for depth */
+}
+
+/* Title styling */
+.app h1 {
+    font-size: 32px;
+    color: #1abc9c;
+    /* Soft purple for the header */
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 3px solid #f4d35e;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+/* Styling for question area */
+.quiz h2 {
+    font-size: 22px;
+    color: #4a4a4a;
+    /* Dark grey for question text */
+    margin-bottom: 25px;
+}
+
+/* Answer buttons styling */
+.btn {
+    background: #f1f1f1;
+    color: #333333;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 14px;
+    margin: 12px 0;
+    text-align: left;
+    border-radius: 8px;
+    /* More rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* For icon placement */
+}
+
+.btn:hover:not([disabled]) {
+    background: #f1f1f1;
+    color: #333;
+    transform: scale(1.05);
+    /* Slight scale effect */
+}
+
+.btn:disabled {
+    background: #e0e0e0;
+    color: #b0b0b0;
+    cursor: not-allowed;
+}
+
+/* Correct and incorrect answer button styles */
+.correct {
+    background: #66bb6a;
+    /* Green for correct answers */
+    color: #fff;
+    border: 2px solid #66bb6a;
+    /* border-color: #66bb6a; */
+}
+
+.incorrect {
+    background: #ff5959;
+    color: #fff;
+    border-color: #ff5959;
+}
+
+/* Correct answer icon (tick) */
+.correct::after {
+    content: '\2714';
+    /* Unicode for check mark */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Incorrect answer icon (cross) */
+.incorrect::after {
+    content: '\2716';
+    /* Unicode for cross mark */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Next button styling */
+#next-btn {
+    background: #2ecc71;
+    /* Soft purple */
+    color: #fff;
+    font-weight: 700;
+    width: 180px;
+    border: 0;
+    padding: 14px;
+    margin: 25px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#next-btn:hover {
+    background: #16a085;
+    /* Slightly lighter purple */
+    transform: scale(1.05);
+    /* Smooth scaling */
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .app {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .app h1 {
+        font-size: 28px;
+    }
+
+    .quiz h2 {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #next-btn {
+        width: 160px;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .app {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .app h1 {
+        font-size: 24px;
+    }
+
+    .quiz h2 {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #next-btn {
+        width: 140px;
+        padding: 10px;
+    }
+}
